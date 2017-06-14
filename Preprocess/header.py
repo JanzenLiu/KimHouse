@@ -9,7 +9,6 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy import stats
 
-%matplotlib inline
 mpl.rcParams['figure.figsize'] = (12, 8)
 
 train = pd.read_csv('../Data/train.csv')
