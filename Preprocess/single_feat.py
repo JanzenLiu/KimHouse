@@ -196,3 +196,13 @@ def plot_subarea_rank():
 #        'Molzhaninovskoe', 'Poselenie Mihajlovo-Jarcevskoe'])
 # Issue 1: to group sub_area by name and find relation
 # Issue 2: to plot a count plot by rank instead of sub_area with order (or by group)
+
+def plot_squares():
+	plt.figure(figsize=(20,30))
+	plt.subplot(311)
+	sns.countplot('full_sq', data=combine)
+	plt.subplot(312)
+	sns.countplot('life_sq', data=combine)
+	plt.subplot(313)
+	sns.countplot('kitch_sq', data=combine)
+	plt.show()
