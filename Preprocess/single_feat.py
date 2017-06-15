@@ -211,6 +211,3 @@ def plot_feat(feat):
 	plt.figure(figsize=(12,8))
 	sns.countplot(x=feat, data=combine)
 	plt.show()
-
-for col in combine.columns:
-	plot_feat(col)
