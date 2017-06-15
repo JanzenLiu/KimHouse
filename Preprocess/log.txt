@@ -213,3 +213,66 @@ Name: mosque_count_3000, dtype: int64
 2     2389
 Name: mosque_count_5000, dtype: int64
 
+# Numeric Features with only 3 values
+Index(['school_education_centers_top_20_raion', 'mosque_count_3000',
+       'mosque_count_5000'],
+      dtype='object')
+
+0    34220
+1     3657
+2      256
+Name: school_education_centers_top_20_raion, dtype: int64
+
+0     8280
+5     7044
+6     4201
+4     4158
+7     3116
+8     2726
+3     2265
+9     1534
+2     1215
+10    1080
+13     938
+14     633
+1      612
+11     331
+Name: school_education_centers_raion, dtype: int64
+
+# Numeric Features with 4 to 5 values
+Index(['state', 'university_top_20_raion', 'build_count_foam',
+       'cafe_count_500_price_high', 'market_count_500'],
+      dtype='object')
+
+2.0     8506
+3.0     7703
+1.0     7121
+4.0      549
+33.0       1
+Name: state, dtype: int64
+
+0    34237
+1     2508
+2     1320
+3       68
+Name: university_top_20_raion, dtype: int64
+
+0.0     30173
+1.0      1169
+11.0      333
+2.0       249
+Name: build_count_foam, dtype: int64
+
+0    37077
+1     1002
+2       42
+3       12
+Name: cafe_count_500_price_high, dtype: int64
+
+0    34103
+1     3553
+2      357
+4       75
+3       45
+Name: market_count_500, dtype: int64
+

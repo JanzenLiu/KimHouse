@@ -38,6 +38,7 @@ log(cr.df['mosque_count_5000'].value_counts())
 # From above we can see that how rare mosque is in the living area above in Russia
 # Therefore we can consider drop those feature concerning mosque
 
+
 num_feats_3 = cr.df[cr.num_feats].loc[:,(cr.df[cr.num_feats].nunique() == 3)].columns
 log(num_feats_3,
 	"Numeric Features with only 3 values")
@@ -47,4 +48,16 @@ for feat in num_feats_3.drop(['mosque_count_3000', 'mosque_count_5000']):
 # It's about school, so what about without the criteion top20?
 log(cr.df['school_education_centers_raion'].value_counts())
 # The number of values is a bit more, but still, only 14, with maximum 14 and minimum 0
+
+
+num_feats_4to5 = cr.df[cr.num_feats].loc[:,((cr.df[cr.num_feats].nunique() == 4) + (cr.df[cr.num_feats].nunique() == 5))].columns
+# log(num_feats_4to5,
+# 	"Numeric Features with 4 to 5 values")
+for feat in num_feats_4to5:
+	log(cr.df[feat].value_counts())
+# From here we learn that state is a 4-value faeture, maybe same as those "excellent", "good" things, we can consider it as a categorical feature
+# For neighbouring building material feature, we left it behind together with other features silimar
+# For the university feature, it's the only university feature in this data set, we will learn it with other features concerning education later
+# For those two features left, it's reasonable for them to include only 4 or 5 values, we left them behind, together with features of their concern
+
 
