@@ -86,3 +86,28 @@ for feat in num_feats_11to20:
 # The distribution of neighbouring cafe things is still heavily tailed, which solidate our mind to merge them to one feature
 # So do the church things
 # Most of the features concerning neighbouring education facility here is a bit weird. We will consider them later
+
+
+# We will no more show details about neighbouring counts feature now, for simplicity
+num_feats_21to50 = cr.feats_with_nunique(21,51)
+log(num_feats_21to50,
+	"Numeric Features with only 21-50 values")
+kwds = ["church", "trc", "market", "cafe", "leisure"]
+for feat in num_feats_21to50:
+	flag = True
+	for kwd in kwds:
+		if kwd in feat:
+			flag = False
+	if(flag):
+		log(cr.df[feat].value_counts())
+# We can transform the big road ID to category, if necessary
+# The distribution of nearby office feature is heavily tailed
+# New topic appeared: floor
+# Notice some neighborhood feature count by distance, and some simply count raion. Interesting
+# Nothing else special happened
+kwds.append("sport")
+kwds.append("office")
+kwds.append("build_count")
+kwds.append("big_road")
+
+
