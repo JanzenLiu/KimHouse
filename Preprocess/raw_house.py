@@ -2,6 +2,9 @@ from reader import *
 
 # TODO(Janzen): Rewrite manually selecting feats with certain n_unique to calling Reader function
 # TODO(Janzen): Write a funciton for selecting feats with n_unique, filter by some criterion and show. And then rewrite all staff doing it to calling function
+# TODO(Janzen): Rewrite all calls of feats_with_nunique() as the function definintion at the class was changed
+# TODO(Janzen): Rewrite the creation of the class
+# TODO(Janzen): Rewrite all calls of log as it was moved from the header file to the Reader class
 
 cr = Reader(combine)
 
@@ -149,7 +152,6 @@ log(num_feats_151to1000,
 # Look at some type we haven't met
 print(cr.df['cafe_sum_500_min_price_avg'].describe())
 print(cr.df['cafe_sum_500_max_price_avg'].describe())
-
 for feat in num_feats_151to1000:
 	flag = True
 	for kwd in kwds:
