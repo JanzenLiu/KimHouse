@@ -13,9 +13,3 @@ class Reader:
 				self.num_feats.append(col)
 
 cr = Reader(combine)
-
-print(format("%d Categorical Features:\n" % len(cr.cat_feats)), cr.cat_feats, "\n") # 16
-print(format("%d Numerical Features:\n" % len(cr.num_feats)), cr.num_feats, "\n") # 275
-
-for col in cr.cat_feats:
-	print(cr.df[col].nunique())
