@@ -276,3 +276,119 @@ Name: cafe_count_500_price_high, dtype: int64
 3       45
 Name: market_count_500, dtype: int64
 
+# Numeric Features with only 6-10 values
+Index(['material', 'healthcare_centers_raion', 'culture_objects_top_25_raion',
+       'build_count_mix', 'ID_railroad_terminal', 'trc_count_500',
+       'leisure_count_500', 'cafe_count_1000_price_high', 'market_count_1000',
+       'market_count_1500', 'market_count_2000'],
+      dtype='object')
+
+1.0    19438
+2.0     3951
+5.0     2048
+4.0     1963
+6.0     1159
+3.0        2
+Name: material, dtype: int64
+
+0    15761
+1     8324
+3     6396
+2     4661
+5     1442
+4     1198
+6      351
+Name: healthcare_centers_raion, dtype: int64
+
+0     35514
+1      1304
+10      859
+3       243
+2       114
+4        99
+Name: culture_objects_top_25_raion, dtype: int64
+
+0.0    25314
+1.0     2697
+2.0     1279
+5.0     1275
+4.0      600
+9.0      282
+3.0      228
+8.0      197
+6.0       52
+Name: build_count_mix, dtype: int64
+
+32     12194
+50      7182
+5       6283
+83      4913
+121     2608
+101     2592
+97      2191
+113      170
+Name: ID_railroad_terminal, dtype: int64
+
+0    27962
+1     5299
+2     2257
+3     1039
+6      815
+5      428
+4      286
+7       43
+8        4
+Name: trc_count_500, dtype: int64
+
+0    36060
+1     1737
+2      168
+4       65
+3       64
+5       12
+9       11
+7        8
+6        5
+8        3
+Name: leisure_count_500, dtype: int64
+
+0    36391
+1     1423
+2      176
+3       63
+4       48
+5       22
+6        9
+7        1
+Name: cafe_count_1000_price_high, dtype: int64
+
+0    27575
+1     7747
+2     2061
+4      356
+3      343
+5       49
+6        2
+Name: market_count_1000, dtype: int64
+
+0    21576
+1     8349
+2     5584
+3     1276
+4      824
+5      396
+6      104
+7       24
+Name: market_count_1500, dtype: int64
+
+0    16965
+1     8615
+2     6773
+3     2604
+4     1719
+5      980
+6      331
+7      130
+8       16
+Name: market_count_2000, dtype: int64
+
