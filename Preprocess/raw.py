@@ -78,3 +78,11 @@ for feat in num_feats_6to10:
 # We encounter the cafe thing again, and still, a lot of building get a 0. We'll consider it later
 
 
+num_feats_11to20 = cr.feats_with_nunique(11,21)
+log(num_feats_11to20,
+	"Numeric Features with only 11-20 values")
+for feat in num_feats_11to20:
+	log(cr.df[feat].value_counts())
+# The distribution of neighbouring cafe things is still heavily tailed, which solidate our mind to merge them to one feature
+# So do the church things
+# Most of the features concerning neighbouring education facility here is a bit weird. We will consider them later

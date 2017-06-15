@@ -392,3 +392,251 @@ Name: market_count_1500, dtype: int64
 8       16
 Name: market_count_2000, dtype: int64
 
+# Numeric Features with only 11-20 values
+Index(['num_room', 'preschool_education_centers_raion',
+       'school_education_centers_raion', 'additional_education_raion',
+       'shopping_centers_raion', 'ID_bus_terminal', 'cafe_count_500_na_price',
+       'cafe_count_500_price_4000', 'big_church_count_500', 'church_count_500',
+       'sport_count_500', 'trc_count_1000', 'cafe_count_1500_price_high',
+       'cafe_count_2000_price_high', 'market_count_3000'],
+      dtype='object')
+
+2.0     11229
+1.0     10457
+3.0      6229
+4.0       551
+5.0        59
+0.0        14
+6.0        10
+7.0         3
+8.0         3
+10.0        2
+19.0        2
+17.0        1
+9.0         1
+Name: num_room, dtype: int64
+
+0     8284
+5     7345
+4     7179
+6     3911
+7     2417
+3     2032
+2     1908
+1     1222
+8     1081
+9      852
+10     700
+13     633
+11     569
+Name: preschool_education_centers_raion, dtype: int64
+
+0     8280
+5     7044
+6     4201
+4     4158
+7     3116
+8     2726
+3     2265
+9     1534
+2     1215
+10    1080
+13     938
+14     633
+1      612
+11     331
+Name: school_education_centers_raion, dtype: int64
+
+0     8001
+3     7183
+2     7001
+1     5447
+4     4889
+5     1583
+6     1518
+16    1492
+11     331
+7      307
+8      280
+10     101
+Name: additional_education_raion, dtype: int64
+
+0     8655
+5     5551
+1     4737
+2     3494
+4     3048
+3     2962
+6     1918
+11    1660
+9     1199
+7     1139
+8      909
+10     864
+23     859
+15     633
+16     277
+19     228
+Name: shopping_centers_raion, dtype: int64
+
+8     9019
+1     5122
+9     3874
+5     3775
+3     2783
+13    2540
+4     2081
+7     1912
+14    1839
+2     1835
+6     1502
+10    1065
+12     413
+11     373
+Name: ID_bus_terminal, dtype: int64
+
+0     32812
+1      3593
+9       775
+2       579
+3       158
+4       131
+5        49
+7        13
+6         8
+8         6
+10        5
+13        2
+12        1
+11        1
+Name: cafe_count_500_na_price, dtype: int64
+
+0     36006
+1       950
+4       799
+2       215
+3       113
+5        21
+8         8
+9         6
+11        4
+10        3
+7         3
+13        2
+6         2
+14        1
+Name: cafe_count_500_price_4000, dtype: int64
+
+0     33455
+1      3343
+8       766
+2       332
+3       151
+4        48
+5        22
+6        11
+10        2
+7         2
+11        1
+Name: big_church_count_500, dtype: int64
+
+0     29506
+1      6188
+2      1137
+15      766
+3       247
+4       133
+5        90
+6        32
+7        15
+8         7
+9         4
+12        3
+10        3
+17        1
+11        1
+Name: church_count_500, dtype: int64
+
+0     21480
+1      8852
+2      3963
+3      1649
+4       819
+9       792
+5       361
+6       106
+7        57
+8        27
+10       24
+11        3
+Name: sport_count_500, dtype: int64
+
+0     15096
+1      7537
+2      5183
+3      3317
+4      2487
+5      1443
+6      1225
+20      767
+7       538
+8       292
+9       111
+10       48
+12       34
+11       30
+13       11
+15        9
+17        3
+19        1
+16        1
+Name: trc_count_1000, dtype: int64
+
+0     35628
+1       988
+5       847
+2       396
+3        85
+6        54
+4        54
+7        33
+9        23
+8        12
+10        5
+12        4
+11        4
+Name: cafe_count_1500_price_high, dtype: int64
+
+0     34730
+1      1419
+10      781
+2       423
+3       238
+4       125
+6       110
+5        69
+9        50
+7        49
+8        42
+11       34
+12       25
+14       12
+15       12
+13        9
+16        4
+17        1
+Name: cafe_count_2000_price_high, dtype: int64
+
+0     11099
+1      6363
+2      5235
+3      4347
+4      3329
+5      3146
+6      2606
+7      1192
+8       703
+9       103
+10       10
+Name: market_count_3000, dtype: int64
+
