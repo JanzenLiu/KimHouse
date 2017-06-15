@@ -4,9 +4,46 @@
 # 96 Numerical Features:
 ...
 
-# 4 Categorical Features:
-['timestamp', 'child_on_acc_pre_school', 'modern_education_share', 'old_education_build_share']
+# Shape of macro
+(2484, 100)
 
-# 96 Numerical Features:
-...
+# Number of unique values of categorical features
+timestamp                    2484
+child_on_acc_pre_school         5
+modern_education_share          3
+old_education_build_share       3
+dtype: int64
+
+# Earliest time in macro
+2010-01-01
+
+# Latest time in macro
+2016-10-19
+
+# Earliest transcation time
+2011-08-20
+
+# Latest transcation time
+2016-05-30
+
+7,311     366
+#!        365
+3,013     365
+16,765    365
+45,713    365
+Name: child_on_acc_pre_school, dtype: int64
+
+93,08      365
+90,92      365
+95,4918    365
+Name: modern_education_share, dtype: int64
+
+8,2517    365
+23,14     365
+25,47     365
+Name: old_education_build_share, dtype: int64
+
+# Year Distribution of records with '7,311' child_on_acc_pre_school
+2012    366
+Name: timestamp, dtype: int64
 
