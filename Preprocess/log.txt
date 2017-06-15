@@ -1,0 +1,215 @@
+# 16 Categorical Features:
+['timestamp', 'product_type', 'sub_area', 'culture_objects_top_25', 'thermal_power_plant_raion', 'incineration_raion', 'oil_chemistry_raion', 'radiation_raion', 'railroad_terminal_raion', 'big_market_raion', 'nuclear_reactor_raion', 'detention_facility_raion', 'water_1line', 'big_road1_1line', 'railroad_1line', 'ecology']
+
+# 275 Numerical Features:
+...
+
+# Category counts for categorical features
+timestamp                    1435
+product_type                    2
+sub_area                      146
+culture_objects_top_25          2
+thermal_power_plant_raion       2
+incineration_raion              2
+oil_chemistry_raion             2
+radiation_raion                 2
+railroad_terminal_raion         2
+big_market_raion                2
+nuclear_reactor_raion           2
+detention_facility_raion        2
+water_1line                     2
+big_road1_1line                 2
+railroad_1line                  2
+ecology                         5
+dtype: int64
+
+poor            10078
+no data          9421
+good             8785
+excellent        5164
+satisfactory     4685
+Name: ecology, dtype: int64
+
+Poselenie Sosenskoe               2073
+Poselenie Vnukovskoe              1956
+Nekrasovka                        1710
+Poselenie Moskovskij              1154
+Tverskoe                           859
+Mitino                             852
+Poselenie Voskresenskoe            738
+Solncevo                           706
+Mar'ino                            633
+Krjukovo                           600
+Nagatinskij Zaton                  571
+Juzhnoe Butovo                     569
+Zapadnoe Degunino                  556
+Poselenie Shherbinka               541
+Poselenie Desjonovskoe             529
+Poselenie Filimonkovskoe           524
+Otradnoe                           450
+Nagornoe                           377
+Ljublino                           369
+Gol'janovo                         365
+Bogorodskoe                        363
+Strogino                           353
+Izmajlovo                          351
+Chertanovo Juzhnoe                 350
+Severnoe Tushino                   337
+Horoshevo-Mnevniki                 333
+Tekstil'shhiki                     333
+Vyhino-Zhulebino                   331
+Birjulevo Vostochnoe               328
+Ochakovo-Matveevskoe               326
+                                  ... 
+Sokol                              101
+Jakimanka                          101
+Severnoe                           101
+Ostankinskoe                        99
+Rostokino                           92
+Nizhegorodskoe                      89
+Kurkino                             80
+Altuf'evskoe                        80
+Sokol'niki                          73
+Begovoe                             70
+Dorogomilovo                        69
+Zamoskvorech'e                      68
+Metrogorodok                        66
+Kapotnja                            59
+Vnukovo                             52
+Krasnosel'skoe                      44
+Poselenie Rjazanovskoe              43
+Poselenie Rogovskoe                 33
+Poselenie Krasnopahorskoe           28
+Poselenie Mosrentgen                23
+Poselenie Kokoshkino                23
+Arbat                               22
+Vostochnoe                          12
+Poselenie Voronovskoe                9
+Poselenie Marushkinskoe              7
+Poselenie Shhapovskoe                4
+Molzhaninovskoe                      4
+Poselenie Kievskij                   3
+Poselenie Mihajlovo-Jarcevskoe       2
+Poselenie Klenovskoe                 1
+Name: sub_area, Length: 146, dtype: int64
+
+# Value counts for numeric features
+id                                       38133
+full_sq                                   1404
+life_sq                                    975
+floor                                       42
+max_floor                                   50
+material                                     6
+build_year                                 127
+num_room                                    13
+kitch_sq                                   281
+state                                        5
+area_m                                     146
+raion_popul                                146
+green_zone_part                            146
+indust_part                                132
+children_preschool                         146
+preschool_quota                            121
+preschool_education_centers_raion           13
+children_school                            146
+school_quota                               125
+school_education_centers_raion              14
+school_education_centers_top_20_raion        3
+hospital_beds_raion                         79
+healthcare_centers_raion                     7
+university_top_20_raion                      4
+sport_objects_raion                         24
+additional_education_raion                  12
+culture_objects_top_25_raion                 6
+shopping_centers_raion                      16
+office_raion                                30
+full_all                                   146
+                                         ...  
+cafe_count_3000_price_high                  24
+big_church_count_3000                      102
+church_count_3000                          163
+mosque_count_3000                            3
+leisure_count_3000                          80
+sport_count_3000                           101
+market_count_3000                           11
+green_part_5000                           3660
+prom_part_5000                            2455
+office_count_5000                          751
+office_sqm_5000                           6763
+trc_count_5000                             121
+trc_sqm_5000                              5692
+cafe_count_5000                           1704
+cafe_sum_5000_min_price_avg               8061
+cafe_sum_5000_max_price_avg               7029
+cafe_avg_price_5000                       8752
+cafe_count_5000_na_price                   175
+cafe_count_5000_price_500                  621
+cafe_count_5000_price_1000                 627
+cafe_count_5000_price_1500                 610
+cafe_count_5000_price_2500                 376
+cafe_count_5000_price_4000                 148
+cafe_count_5000_price_high                  31
+big_church_count_5000                      152
+church_count_5000                          251
+mosque_count_5000                            3
+leisure_count_5000                         107
+sport_count_5000                           217
+market_count_5000                           22
+Length: 275, dtype: int64
+
+# Num of unique values of numeric features
+[    2     2     2     2     3     3     3     4     4     4     5     5
+     6     6     7     7     8     8     8     9     9     9    10    11
+    11    12    12    13    13    13    14    14    14    14    15    16
+    18    19    21    21    21    22    23    24    24    25    26    27
+    28    29    30    30    31    31    31    33    34    34    34    35
+    36    37    42    43    43    47    48    48    50    53    54    54
+    58    60    63    65    66    69    70    76    76    79    80    84
+    86    87    88    91    92    97    97   100   100   101   101   102
+   107   112   113   114   117   121   121   125   127   132   135   135
+   142   143   144   144   145   145   145   145   145   145   145   145
+   145   146   146   146   146   146   146   146   146   146   146   146
+   146   146   146   146   146   146   146   146   146   148   151   151
+   152   155   156   163   175   217   222   223   224   225   231   246
+   251   251   281   359   376   378   379   401   408   496   523   577
+   610   621   627   736   751   959   974   975  1108  1170  1195  1404
+  1704  1796  1866  1912  2171  2361  2455  2552  2687  2815  2830  2951
+  3144  3402  3458  3462  3488  3660  3664  3670  3685  3894  3922  4083
+  4121  4155  4299  4818  4982  5692  5726  6763  6780  7029  8061  8752
+ 13448 13504 13553 13589 13597 13607 13609 13610 13610 13613 13617 13617
+ 13617 13617 13626 13626 13626 13626 13626 13626 13626 13626 13626 13626
+ 13626 13626 13626 13626 13626 13629 13632 13637 13639 13639 13640 13640
+ 13640 13640 13640 13640 13640 13640 13640 13640 13640 13640 13640 13640
+ 13640 13640 13640 13640 13640 13640 13640 13640 13640 13640 38133]
+
+# Numeric Features with only 2 values
+Index(['mosque_count_500', 'mosque_count_1000', 'mosque_count_1500',
+       'mosque_count_2000'],
+      dtype='object')
+
+0    37929
+1      204
+Name: mosque_count_500, dtype: int64
+
+0    37395
+1      738
+Name: mosque_count_1000, dtype: int64
+
+0    36688
+1     1445
+Name: mosque_count_1500, dtype: int64
+
+0    34762
+1     3371
+Name: mosque_count_2000, dtype: int64
+
+0    31405
+1     5934
+2      794
+Name: mosque_count_3000, dtype: int64
+
+0    23881
+1    11863
+2     2389
+Name: mosque_count_5000, dtype: int64
+
