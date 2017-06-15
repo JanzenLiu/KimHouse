@@ -1,4 +1,4 @@
 *.ipynb
 */__pycache__/*
-/*.*.pyc
+Preprocess/__pycache__/header.cpython-35.pyc
 */dev.py

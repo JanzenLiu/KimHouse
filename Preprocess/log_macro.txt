@@ -526,3 +526,358 @@ Name: apartment_build, dtype: int64
 229294.8    365
 Name: apartment_fund_sqm, dtype: int64
 
+# Numeric features with more than 7 values
+oil_urals                                       81
+gdp_quart                                       26
+gdp_quart_growth                                23
+cpi                                             78
+ppi                                             81
+balance_trade                                   80
+balance_trade_growth                            26
+usdrub                                        1754
+eurrub                                        1760
+brent                                         1474
+net_capital_export                              68
+average_provision_of_build_contract             25
+average_provision_of_build_contract_moscow      22
+rts                                           1680
+micex                                         1656
+micex_rgbi_tr                                 1063
+micex_cbi_tr                                  1511
+deposits_value                                  74
+deposits_growth                                 73
+deposits_rate                                   47
+mortgage_value                                  81
+mortgage_growth                                 69
+mortgage_rate                                   66
+income_per_cap                                  72
+fixed_basket                                    81
+rent_price_4+room_bus                           72
+rent_price_3room_bus                            70
+rent_price_2room_bus                            71
+rent_price_1room_bus                            69
+rent_price_3room_eco                            71
+rent_price_2room_eco                            71
+rent_price_1room_eco                            69
+dtype: int64
+
+count    2484.000000
+mean       86.467157
+std        27.528709
+min        29.112500
+25%        61.283300
+50%       101.416500
+75%       109.310000
+max       122.520000
+Name: oil_urals, dtype: float64
+
+count     2394.000000
+mean     16993.230075
+std       3187.074480
+min       9995.800000
+25%      14925.000000
+50%      17442.100000
+75%      19284.100000
+max      22016.100000
+Name: gdp_quart, dtype: float64
+
+count    2394.000000
+mean        1.523726
+std         2.875659
+min        -4.500000
+25%         0.400000
+50%         1.300000
+75%         4.100000
+max         5.200000
+Name: gdp_quart_growth, dtype: float64
+
+count    2453.000000
+mean      407.808398
+std        65.895969
+min       315.100000
+25%       354.000000
+50%       393.000000
+75%       469.400000
+max       531.000000
+Name: cpi, dtype: float64
+
+count    2453.000000
+mean      480.216347
+std        70.286366
+min       337.200000
+25%       438.400000
+50%       473.500000
+75%       520.700000
+max       606.100000
+Name: ppi, dtype: float64
+
+count    2453.000000
+mean       15.344006
+std         3.878104
+min         5.823000
+25%        12.785000
+50%        16.041000
+75%        18.076000
+max        21.939000
+Name: balance_trade, dtype: float64
+
+count    2394.000000
+mean       16.846742
+std        16.988727
+min        -4.100000
+25%         7.200000
+50%        10.500000
+75%        21.500000
+max        75.800000
+Name: balance_trade_growth, dtype: float64
+
+count    2481.000000
+mean       40.732406
+std        15.006583
+min        27.276300
+25%        30.508800
+50%        32.316500
+75%        53.752300
+max        82.276400
+Name: usdrub, dtype: float64
+
+count    2481.000000
+mean       50.444801
+std        13.905912
+min        37.445400
+25%        40.242600
+50%        42.862200
+75%        61.323700
+max        90.881500
+Name: eurrub, dtype: float64
+
+count    2481.000000
+mean       88.184103
+std        26.960042
+min        27.880000
+25%        63.340000
+50%       101.560000
+75%       109.990000
+max       126.650000
+Name: brent, dtype: float64
+
+count    2088.000000
+mean       -0.038874
+std         0.274391
+min        -0.523202
+25%        -0.241395
+50%        -0.066348
+75%         0.152726
+max         0.614395
+Name: net_capital_export, dtype: float64
+
+count    2484.000000
+mean        5.766268
+std         0.536725
+min         4.000000
+25%         5.750000
+50%         5.940000
+75%         6.070000
+max         6.460000
+Name: average_provision_of_build_contract, dtype: float64
+
+count    2119.000000
+mean        6.561406
+std         0.450075
+min         5.960000
+25%         6.180000
+50%         6.590000
+75%         6.750000
+max         7.830000
+Name: average_provision_of_build_contract_moscow, dtype: float64
+
+count    2474.000000
+mean     1314.539830
+std       334.604876
+min       628.410000
+25%       988.067500
+50%      1377.380000
+75%      1525.905000
+max      2123.560000
+Name: rts, dtype: float64
+
+count    2474.000000
+mean     1553.797336
+std       180.790490
+min      1197.390000
+25%      1416.500000
+50%      1496.880000
+75%      1686.287500
+max      2053.750000
+Name: micex, dtype: float64
+
+count    2474.000000
+mean      129.026273
+std         7.101521
+min        97.860000
+25%       126.130000
+50%       131.280000
+75%       132.970000
+max       141.650000
+Name: micex_rgbi_tr, dtype: float64
+
+count    2483.000000
+mean      233.729046
+std        35.581966
+min       171.150000
+25%       205.295000
+50%       233.000000
+75%       248.390000
+max       314.300000
+Name: micex_cbi_tr, dtype: float64
+
+count    2.484000e+03
+mean     1.504170e+07
+std      4.762312e+06
+min      7.484970e+06
+25%      1.087608e+07
+50%      1.521005e+07
+75%      1.907733e+07
+max      2.345319e+07
+Name: deposits_value, dtype: float64
+
+count    2453.000000
+mean        0.013947
+std         0.018343
+min        -0.020356
+25%         0.001960
+50%         0.014079
+75%         0.022536
+max         0.080400
+Name: deposits_growth, dtype: float64
+
+count    2070.000000
+mean        6.296425
+std         1.898185
+min         4.000000
+25%         5.200000
+50%         5.700000
+75%         6.920000
+max        12.330000
+Name: deposits_rate, dtype: float64
+
+count    2.484000e+03
+mean     5.007981e+05
+std      3.946050e+05
+min      8.016000e+03
+25%      1.791530e+05
+50%      4.241050e+05
+75%      7.660090e+05
+max      1.753294e+06
+Name: mortgage_value, dtype: float64
+
+count    2119.000000
+mean        0.432335
+std         0.477834
+min        -0.408860
+25%         0.280961
+50%         0.431290
+75%         0.677638
+max         1.550459
+Name: mortgage_growth, dtype: float64
+
+count    2484.000000
+mean       12.659308
+std         0.655984
+min        11.400000
+25%        12.220000
+50%        12.550000
+75%        12.990000
+max        14.710000
+Name: mortgage_rate, dtype: float64
+
+count      2191.000000
+mean      51766.238932
+std       13310.709059
+min       29880.200000
+25%       43706.450000
+50%       49388.700000
+75%       56073.500000
+max      102709.000000
+Name: income_per_cap, dtype: float64
+
+count     2484.000000
+mean     15331.497987
+std       2789.136259
+min      11443.630000
+25%      12992.440000
+50%      14983.920000
+75%      18295.070000
+max      20422.500000
+Name: fixed_basket, dtype: float64
+
+count    2211.000000
+mean      166.754536
+std        27.119071
+min       100.080000
+25%       146.410000
+50%       162.000000
+75%       180.760000
+max       250.300000
+Name: rent_price_4+room_bus, dtype: float64
+
+count    2211.000000
+mean       95.227395
+std        11.506898
+min        76.810000
+25%        87.090000
+50%        92.990000
+75%       101.150000
+max       138.140000
+Name: rent_price_3room_bus, dtype: float64
+
+count    2211.000000
+mean       72.050109
+std         8.471733
+min        53.730000
+25%        66.860000
+50%        71.110000
+75%        75.980000
+max        96.000000
+Name: rent_price_2room_bus, dtype: float64
+
+count    2211.000000
+mean       52.872040
+std         5.673237
+min        41.880000
+25%        50.500000
+50%        52.000000
+75%        55.300000
+max        72.020000
+Name: rent_price_1room_bus, dtype: float64
+
+count    2211.000000
+mean       47.299711
+std         3.070219
+min        37.540000
+25%        45.530000
+50%        47.350000
+75%        49.350000
+max        53.210000
+Name: rent_price_3room_eco, dtype: float64
+
+count    2211.000000
+mean       38.895364
+std         5.035190
+min         0.100000
+25%        37.930000
+50%        39.470000
+75%        41.300000
+max        43.850000
+Name: rent_price_2room_eco, dtype: float64
+
+count    2211.000000
+mean       31.002442
+std         3.984142
+min         2.310000
+25%        29.780000
+50%        31.110000
+75%        33.060000
+max        35.370000
+Name: rent_price_1room_eco, dtype: float64
+
