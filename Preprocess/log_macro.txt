@@ -1,0 +1,12 @@
+# 4 Categorical Features:
+['timestamp', 'child_on_acc_pre_school', 'modern_education_share', 'old_education_build_share']
+
+# 96 Numerical Features:
+...
+
+# 4 Categorical Features:
+['timestamp', 'child_on_acc_pre_school', 'modern_education_share', 'old_education_build_share']
+
+# 96 Numerical Features:
+...
+
