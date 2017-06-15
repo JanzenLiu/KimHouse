@@ -140,3 +140,60 @@ kwds.append("preschool")
 kwds.append("school")
 kwds.append("hospital")
 kwds.append("ID_railroad")
+
+
+num_feats_151to1000 = cr.feats_with_nunique(151,1001)
+rmd = [] # stands for remained
+log(num_feats_151to1000,
+	"Numeric Features with only 151-1000 values")
+# Look at some type we haven't met
+print(cr.df['cafe_sum_500_min_price_avg'].describe())
+print(cr.df['cafe_sum_500_max_price_avg'].describe())
+
+for feat in num_feats_151to1000:
+	flag = True
+	for kwd in kwds:
+		if kwd in feat:
+			flag = False
+	if(flag):
+		# log(cr.df[feat].value_counts())"_part"
+		rmd.append(feat)
+log(rmd, "After filtering")
+print(len(rmd)) # 3
+# It's about square meter of living area and metro, study them later
+
+
+num_feats_1001to10000 = cr.feats_with_nunique(1001,10001)
+rmd = [] # stands for remained
+log(num_feats_1001to10000,
+	"Numeric Features with only 1001-10000 values")
+for feat in num_feats_1001to10000:
+	flag = True
+	for kwd in kwds:
+		if kwd in feat:
+			flag = False
+	if(flag):
+		# log(cr.df[feat].value_counts())"_part"
+		rmd.append(feat)
+log(rmd, "After filtering")
+print(len(rmd)) # 1
+# Only one! And it's sqaure meter again
+# There are really a lot of cafe ORZ
+
+
+num_feats_10001p = cr.feats_with_nunique(10001,50000) # stands for 10001 plus
+rmd = [] # stands for remained
+log(num_feats_10001p,
+	"Numeric Features with only 10001+ values")
+for feat in num_feats_10001p:
+	flag = True
+	for kwd in kwds:
+		if kwd in feat:
+			flag = False
+	if(flag):
+		# log(cr.df[feat].value_counts())"_part"
+		rmd.append(feat)
+log(rmd, "After filtering")
+print(len(rmd)) # 47
+# We should discard ID at the beginning, what a mistake
+# Except from ID all are distances... No wonder that much unqiue values. We will process them later
