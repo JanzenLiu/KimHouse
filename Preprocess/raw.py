@@ -1,6 +1,7 @@
 from reader import *
 
 # TODO(Janzen): Rewrite manually selecting feats with certain n_unique to calling Reader function
+# TODO(Janzen): Write a funciton for selecting feats with n_unique, filter by some criterion and show. And then rewrite all staff doing it to calling function
 
 cr = Reader(combine)
 
@@ -111,3 +112,31 @@ kwds.append("build_count")
 kwds.append("big_road")
 
 
+# From now on we only print details for little features, since 50 and even hundreds of lines is a significant space waste
+# We just print it to the console and determine whether to record it later
+num_feats_51to150 = cr.feats_with_nunique(51,151)
+rmd = [] # stands for remained
+log(num_feats_51to150,
+	"Numeric Features with only 51-150 values")
+for feat in num_feats_51to150:
+	flag = True
+	for kwd in kwds:
+		if kwd in feat:
+			flag = False
+	if(flag):
+		# log(cr.df[feat].value_counts())"_part"
+		rmd.append(feat)
+log(rmd, "After filtering")
+print(len(rmd)) # 39
+for feat in rmd[:3]:
+	print(cr.df[feat].dropna().astype(int).value_counts(sort=False))
+# We just have a glance on them. Since the num of unique values are really large, we don't study the details now
+# We'll deal with them later after studying their distribution plot
+kwds.append("male")
+kwds.append("female")
+kwds.append("all")
+kwds.append("_part")
+kwds.append("preschool")
+kwds.append("school")
+kwds.append("hospital")
+kwds.append("ID_railroad")
