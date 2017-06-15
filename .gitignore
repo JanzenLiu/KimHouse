@@ -1,4 +1,4 @@
 *.ipynb
 Preprocess/__pycache__/*
-*.pyc
+/*.*.pyc
 */dev.py
