@@ -1,4 +1,4 @@
-from header import *
+from .header import *
 
 # TODO: add exception handler and error log for function of Reader
 
