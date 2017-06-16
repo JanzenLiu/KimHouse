@@ -45,3 +45,14 @@ mr.log("", "The distribution of them")
 for feat in feats_7m:
 	mr.log(mr.df[feat].value_counts())
 # Though not examine yet, we can say they're highly possibly to appear with year
+
+
+feats_7p = mr.feats_with_nunique(8, 3000, "num") # stands for 7 minus
+mr.log(mr.df[feats_7p].nunique(),
+	"Numeric features with more than 7 values")
+# Notice that deposits_value - deposits_growth = 1, is there anything underlying?
+# Notice that those rent_price things are closed, is there anything underlying?
+for feat in feats_7p:
+	mr.log(mr.df[feat].describe())
+# Those rent_price things may be important.
+# We will study them later by comparing current date rent price to corresponding house price

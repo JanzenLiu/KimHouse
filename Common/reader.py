@@ -1,11 +1,13 @@
-from header import *
+try:
+	from .header import *
+except:
+	from header import *
 
-# TODO: add exception handler and error log for function of Reader
+# TODO: add exception handler for Reader
 
 class Reader:
-	def __init__(self, df, logfile):
+	def __init__(self, df):
 		self.df = df
-		self.logfile = logfile
 		self.num_feats = []
 		self.cat_feats = []
 		for col in df.columns:
@@ -27,11 +29,3 @@ class Reader:
 			return self.df[cols].loc[:,(self.df[cols].nunique() == lower)].columns
 		else:
 			return self.df[cols].loc[:,((self.df[cols].nunique() >= lower) * (self.df[cols].nunique() < upper))].columns
-
-	def log(self, msg, title=None):
-		if(type(msg) != str):
-			msg = format(msg)
-		with open(self.logfile, "a") as f:
-			if(title):
-				f.write("# " + title + "\n")
-			f.write(msg + "\n\n")
