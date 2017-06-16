@@ -20,7 +20,8 @@ class FeatureClassifier:
 			kwds = [keywords]
 		else:
 			kwds = list(keywords) # clone the keywords object
-		self.groups[className] = []
+		if(not className in self.groups):
+			self.groups[className] = []
 		if(not overlap):
 			cols = self.groups['none']
 		else:
@@ -33,10 +34,11 @@ class FeatureClassifier:
 		for col in self.groups[className]:
 			if col in self.groups['none']:
 				self.groups['none'].remove(col)
-		print("%d features selected" % len(self.groups[className]))
-		print(self.groups[className])
-		print("%d features unassigned" % len(self.groups["none"]))
-		print(self.groups["none"])
+		# print("%d features selected" % len(self.groups[className]))
+		# print(self.groups[className])
+		# print("%d features unassigned" % len(self.groups["none"]))
+		# print(self.groups["none"])
+		return self.groups[className]
 
 	def toString(self):
 		msg = ""
@@ -44,9 +46,10 @@ class FeatureClassifier:
 			if(key != "none"):
 				msg += format("%d features concerning %s:\n" % (len(value), key))
 				msg += format(value)
-				msg += "\n"
+				msg += "\n\n"
 		msg += format("%d features not assigned to any group yet:\n" % len(self.groups["none"]))
 		msg += format(self.groups["none"])
+		return msg
 
 	def print(self):
 		print(self.toString())
