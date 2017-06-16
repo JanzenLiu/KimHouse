@@ -19,8 +19,20 @@ def process_feat_name(df):
 		labels.append(feat)
 	return labels
 
+def split_by_type(df):
+	prices = pd.DataFrame()
+	counts = pd.DataFrame()
+	for i in range(6):
+		base = 11 * i
+		prices = pd.concat([prices, df.iloc[:,base+1:base+4]], axis=1)
+		counts = pd.concat([counts, df.iloc[:,base:base+1], df.iloc[:,base+4:base+11]], axis=1)
+	return prices, counts
+
 hr = HouseReader()
+hl = Logger("../Log/feats_group.txt")
+hl = Logger("","Start analyzing features for Cafe")
 cafs = hr.df[hr.caf_feats].drop(['catering_km'], 1)
+prices, counts = split_by_type(cafs)
 
 plt.figure(figsize=(12,8))
 sns.heatmap(cafs.corr(), square=True)
@@ -93,3 +105,28 @@ plt.savefig("../Figure/Raw/Cafe/price_corr_each_dist.png")
 plt.show()
 # from the pictures we can see that, with the distance fixed, counts are very highly correlated, so do those price statistics
 # Maybe we can reconstruct all those cafe features to no more than 5 features, which will significantly save time and computational power for us
+
+
+pca = PCA()
+hl.log(counts.isnull().sum(), "Number of nan in counts features")
+# see, there is no NaN in counts, therefore we can do PCA directly
+pca.fit(counts)
+hl.log(format("Reduced to %d components" % pca.n_components_),"Doing PCA on raw counts features...")
+hl.log(pca.explained_variance_ratio_, "ROV explained by the principal components")
+hl.log(pca.explained_variance_ratio_[:2].sum(), "ROV explained together by the 2 most principal components")
+# the 1st principle component explains more than 0.95 of the variance,
+# and together with the 2nd explain more than 0.99 (nearly 0.999).
+# Maybe we don't need to further study in these cafe features... 
+# Just use one or two features to represent them seems reasonable
+# But we need to preserve some significant signal for high/low house price. We will consider it later
+
+hl.log(prices.isnull().sum(), "Number of nan in prices features")
+# to much NaN in those 500 featues
+# notice that the NaN within a given distance seem to appear together
+prices_filled = prices.fillna(prices.mean())
+# we simply fill NaN with mean to keep the variance, I know it may affect the result but just ignore it now
+hl.log(format("Reduced to %d components" % pca.n_components_), "Doing PCA on prices features, imputed by their mean")
+pca.fit(prices_filled)
+hl.log(pca.explained_variance_ratio_, "ROV explained by the principal components")
+hl.log(pca.explained_variance_ratio_[:5].sum(), "ROV explained together by the 5 most principal components")
+# 5 components together explain 0.96, acceptable. We'll discuss later

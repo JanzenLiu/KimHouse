@@ -44,3 +44,108 @@
 7 features not assigned to any group yet:
 ['hospital_beds_raion', 'healthcare_centers_raion', 'detention_facility_raion', 'cemetery_km', 'hospice_morgue_km', 'detention_facility_km', 'public_healthcare_km']
 
+# Number of nan in counts features
+cafe_count_500                0
+cafe_count_500_na_price       0
+cafe_count_500_price_500      0
+cafe_count_500_price_1000     0
+cafe_count_500_price_1500     0
+cafe_count_500_price_2500     0
+cafe_count_500_price_4000     0
+cafe_count_500_price_high     0
+cafe_count_1000               0
+cafe_count_1000_na_price      0
+cafe_count_1000_price_500     0
+cafe_count_1000_price_1000    0
+cafe_count_1000_price_1500    0
+cafe_count_1000_price_2500    0
+cafe_count_1000_price_4000    0
+cafe_count_1000_price_high    0
+cafe_count_1500               0
+cafe_count_1500_na_price      0
+cafe_count_1500_price_500     0
+cafe_count_1500_price_1000    0
+cafe_count_1500_price_1500    0
+cafe_count_1500_price_2500    0
+cafe_count_1500_price_4000    0
+cafe_count_1500_price_high    0
+cafe_count_2000               0
+cafe_count_2000_na_price      0
+cafe_count_2000_price_500     0
+cafe_count_2000_price_1000    0
+cafe_count_2000_price_1500    0
+cafe_count_2000_price_2500    0
+cafe_count_2000_price_4000    0
+cafe_count_2000_price_high    0
+cafe_count_3000               0
+cafe_count_3000_na_price      0
+cafe_count_3000_price_500     0
+cafe_count_3000_price_1000    0
+cafe_count_3000_price_1500    0
+cafe_count_3000_price_2500    0
+cafe_count_3000_price_4000    0
+cafe_count_3000_price_high    0
+cafe_count_5000               0
+cafe_count_5000_na_price      0
+cafe_count_5000_price_500     0
+cafe_count_5000_price_1000    0
+cafe_count_5000_price_1500    0
+cafe_count_5000_price_2500    0
+cafe_count_5000_price_4000    0
+cafe_count_5000_price_high    0
+dtype: int64
+
+# Doing PCA on raw counts features...
+Reduced to 48 components
+
+# ROV explained by the principal components
+[  9.63070292e-01   3.51395627e-02   6.47146671e-04   4.15083811e-04
+   2.35317925e-04   1.16675217e-04   7.36393289e-05   5.14470211e-05
+   4.35673938e-05   3.87493262e-05   3.19266379e-05   2.44162626e-05
+   1.71196916e-05   1.41330716e-05   1.22758005e-05   1.16307782e-05
+   8.83703533e-06   8.01574515e-06   7.00964960e-06   4.66858912e-06
+   4.18240367e-06   3.72705414e-06   2.79028494e-06   2.66239503e-06
+   2.45076230e-06   2.01924832e-06   1.85003991e-06   1.75715534e-06
+   1.42558256e-06   9.71239923e-07   8.92744091e-07   7.85008805e-07
+   7.10215630e-07   6.46817648e-07   5.28139872e-07   3.17877381e-07
+   2.82525855e-07   2.21278704e-07   1.11889057e-07   8.60757402e-08
+   4.82843693e-08   1.79974107e-08   1.77857842e-32   7.61618421e-33
+   7.61618421e-33   7.61618421e-33   7.61618421e-33   1.29693502e-34]
+
+# ROV explained together by the 2 most principal components
+0.9982098550232592
+
+# Number of nan in prices features
+cafe_sum_500_min_price_avg     16440
+cafe_sum_500_max_price_avg     16440
+cafe_avg_price_500             16440
+cafe_sum_1000_min_price_avg     7746
+cafe_sum_1000_max_price_avg     7746
+cafe_avg_price_1000             7746
+cafe_sum_1500_min_price_avg     5020
+cafe_sum_1500_max_price_avg     5020
+cafe_avg_price_1500             5020
+cafe_sum_2000_min_price_avg     2149
+cafe_sum_2000_max_price_avg     2149
+cafe_avg_price_2000             2149
+cafe_sum_3000_min_price_avg     1173
+cafe_sum_3000_max_price_avg     1173
+cafe_avg_price_3000             1173
+cafe_sum_5000_min_price_avg      425
+cafe_sum_5000_max_price_avg      425
+cafe_avg_price_5000              425
+dtype: int64
+
+# Doing PCA on prices features, imputed by their mean
+Reduced to 48 components
+
+# ROV explained by the principal components
+[  4.71625316e-01   2.48982341e-01   1.30147324e-01   6.67291849e-02
+   4.54631080e-02   3.36207389e-02   1.85241688e-03   8.14501224e-04
+   3.66768301e-04   1.96019555e-04   1.48116843e-04   5.41639622e-05
+   6.13620892e-12   4.86144742e-12   4.44689724e-12   3.28282038e-12
+   2.35381375e-12   8.06960799e-13]
+
+# ROV explained together by the 5 most principal components
+0.9629472743393983
+
