@@ -42,7 +42,7 @@ for item in caf_by_dist:
 		labels.append(feat)
 	pos += 1
 	plt.subplot(pos)
-	sns.heatmap(item.corr(), square=True, xticklabels=labels, yticklabels=labels)
+	sns.heatmap(item.corr(), square=True, xticklabels=labels, yticklabels=labels, vmin=0.15)
 	plt.xticks(rotation=30, fontsize=8)
 	plt.yticks(rotation=30, fontsize=8)
 	plt.title("Distance: %s" % dist)
