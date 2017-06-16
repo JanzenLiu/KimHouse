@@ -38,7 +38,7 @@ class FeatureClassifier:
 		# print(self.groups[className])
 		# print("%d features unassigned" % len(self.groups["none"]))
 		# print(self.groups["none"])
-		return self.groups[className]
+		return list(self.groups[className]) # clone the list
 
 	def toString(self):
 		msg = ""
