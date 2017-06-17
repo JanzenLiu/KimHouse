@@ -6,6 +6,8 @@ from Common import *
 # TODO(Janzne): write a feature group handler class, for each instance, 
 #	there's an unique directory for saving figures, and processing feature names
 # TODO(Janzen): fix the drop columns code: use another reference to keep combine unchanged
+# TODO(Janzen): develop an algorithm to find the best group of feature groups in between which
+#	the correlation is highest or relatively very high or satisify some specified criterion
 
 def plot_corr(df, labels=None, save=None):
     ax = sns.heatmap(df.corr(), square=True)
@@ -138,3 +140,4 @@ plot_corr(combine, save="../Figure/Raw/Corr/3_no_religion_no_office.png")
 hl.log(combine.shape[1], "Columns left now:") # 161
 # We can now just use 161 + (1 + 5 + 3 +1 + 1) = 172 features to represent house information now,
 # whose original number of features is 290!
+

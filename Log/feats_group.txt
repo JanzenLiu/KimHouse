@@ -465,3 +465,67 @@ Name: church_count_3000, Length: 180, dtype: float64
 # Columns left now:
 161
 
+# Number other features that highly correlated to
+stadium_km                    8
+radiation_km                  8
+ttk_km                        7
+basketball_km                 7
+zd_vokzaly_avto_km            7
+sadovoe_km                    7
+kremlin_km                    6
+metro_km_walk                 6
+metro_min_walk                6
+metro_km_avto                 6
+bulvar_ring_km                6
+preschool_km                  5
+leisure_count_3000            5
+school_km                     5
+metro_min_avto                4
+leisure_count_1000            4
+leisure_count_2000            4
+railroad_station_avto_km      4
+power_transmission_line_km    4
+swim_pool_km                  4
+leisure_count_1500            4
+shopping_centers_km           4
+sport_count_5000              3
+railroad_station_walk_min     3
+thermal_power_plant_km        3
+railroad_station_walk_km      3
+build_count_wood              3
+public_healthcare_km          3
+park_km                       3
+sport_count_2000              3
+                             ..
+green_part_5000               1
+prom_part_5000                1
+trc_sqm_5000                  1
+catering_km                   1
+workplaces_km                 1
+water_treatment_km            1
+ID_railroad_terminal          1
+cemetery_km                   1
+incineration_km               1
+ID_railroad_station_walk      1
+ID_railroad_station_avto      1
+water_km                      1
+mkad_km                       1
+big_road1_km                  1
+ID_big_road1                  1
+big_road2_km                  1
+railroad_km                   1
+bus_terminal_avto_km          1
+university_km                 1
+ID_bus_terminal               1
+oil_chemistry_km              1
+nuclear_reactor_km            1
+ts_km                         1
+big_market_km                 1
+market_shop_km                1
+fitness_km                    1
+ice_rink_km                   1
+hospice_morgue_km             1
+detention_facility_km         1
+full_sq                       1
+Length: 145, dtype: int64
+
