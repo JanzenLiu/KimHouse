@@ -308,3 +308,160 @@ catering_km                  1
 full_sq                      1
 Length: 180, dtype: int64
 
+# Correlation between office_count_3000 and other features
+office_count_3000               1.000000
+office_count_2000               0.992660
+office_count_1500               0.980071
+church_count_3000               0.975822
+big_church_count_3000           0.969785
+leisure_count_3000              0.965786
+leisure_count_5000              0.962047
+office_count_5000               0.959369
+church_count_5000               0.958491
+big_church_count_5000           0.955246
+church_count_2000               0.950780
+office_count_1000               0.943969
+big_church_count_2000           0.943610
+office_raion                    0.939055
+church_count_1500               0.937864
+leisure_count_2000              0.935263
+big_church_count_1500           0.928325
+office_sqm_3000                 0.917479
+church_count_1000               0.914366
+big_church_count_1000           0.914215
+leisure_count_1500              0.909139
+office_sqm_5000                 0.877488
+leisure_count_1000              0.873703
+church_count_500                0.857981
+office_sqm_2000                 0.853933
+office_count_500                0.850495
+big_church_count_500            0.849142
+culture_objects_top_25_raion    0.835334
+office_sqm_1500                 0.812261
+office_sqm_1000                 0.802693
+                                  ...   
+big_church_km                  -0.205949
+thermal_power_plant_km         -0.207274
+catering_km                    -0.210621
+nuclear_reactor_km             -0.216688
+market_shop_km                 -0.216891
+basketball_km                  -0.230233
+exhibition_km                  -0.233105
+church_synagogue_km            -0.240286
+preschool_quota                -0.241796
+oil_chemistry_km               -0.244993
+bus_terminal_avto_km           -0.247262
+university_km                  -0.253138
+office_km                      -0.254077
+build_count_panel              -0.257095
+ice_rink_km                    -0.257825
+green_zone_part                -0.258710
+stadium_km                     -0.259808
+green_part_1500                -0.264974
+mosque_km                      -0.289972
+detention_facility_km          -0.296901
+green_part_2000                -0.297177
+museum_km                      -0.312414
+green_part_3000                -0.326922
+theater_km                     -0.332355
+ttk_km                         -0.347496
+green_part_5000                -0.368261
+zd_vokzaly_avto_km             -0.418903
+sadovoe_km                     -0.444022
+bulvar_ring_km                 -0.476563
+kremlin_km                     -0.495264
+Name: office_count_3000, Length: 180, dtype: float64
+
+# Correlation between church_count_3000 and other features
+church_count_3000               1.000000
+big_church_count_3000           0.984858
+church_count_2000               0.980068
+office_count_2000               0.976436
+office_count_3000               0.975822
+leisure_count_3000              0.967966
+big_church_count_2000           0.967281
+church_count_1500               0.966417
+office_count_1500               0.965721
+big_church_count_1500           0.951746
+leisure_count_2000              0.948862
+church_count_1000               0.942174
+big_church_count_1000           0.936237
+church_count_5000               0.936140
+office_count_1000               0.930347
+big_church_count_5000           0.929468
+leisure_count_5000              0.927758
+leisure_count_1500              0.925110
+office_raion                    0.915714
+office_count_5000               0.912642
+leisure_count_1000              0.896886
+church_count_500                0.888054
+big_church_count_500            0.875202
+office_sqm_3000                 0.847286
+office_count_500                0.836769
+culture_objects_top_25_raion    0.830453
+office_sqm_5000                 0.812231
+office_sqm_2000                 0.781112
+trc_count_3000                  0.773864
+sport_count_3000                0.768387
+                                  ...   
+thermal_power_plant_km         -0.206193
+radiation_km                   -0.209808
+park_km                        -0.210314
+big_church_km                  -0.210926
+catering_km                    -0.216640
+nuclear_reactor_km             -0.219136
+market_shop_km                 -0.220193
+green_zone_part                -0.227840
+basketball_km                  -0.236627
+green_part_1500                -0.238680
+exhibition_km                  -0.245305
+office_km                      -0.246448
+church_synagogue_km            -0.254123
+bus_terminal_avto_km           -0.254760
+stadium_km                     -0.259373
+university_km                  -0.260788
+green_part_2000                -0.268045
+oil_chemistry_km               -0.268606
+ice_rink_km                    -0.271651
+detention_facility_km          -0.290072
+green_part_3000                -0.294373
+mosque_km                      -0.297076
+museum_km                      -0.319448
+theater_km                     -0.330782
+ttk_km                         -0.337131
+green_part_5000                -0.337378
+zd_vokzaly_avto_km             -0.404064
+sadovoe_km                     -0.433061
+bulvar_ring_km                 -0.465871
+kremlin_km                     -0.486187
+Name: church_count_3000, Length: 180, dtype: float64
+
+# Start studying office features
+
+
+# ROV explained by the principal components
+[  9.76405674e-01   1.79970007e-02   3.96905379e-03   1.09108242e-03
+   4.15695678e-04   1.21492785e-04   3.63323920e-10   3.64976043e-11
+   8.61094873e-12   2.84426055e-12   6.47310182e-13   5.00914555e-13
+   1.82512095e-13   6.23776707e-14]
+
+# ROV explained together by the 2 most principal components
+0.9944026749108111
+
+# Start studying religion features
+
+
+# ROV explained by the principal components
+[  9.48811502e-01   3.60817123e-02   6.96672249e-03   3.79466488e-03
+   1.50013562e-03   1.30645973e-03   5.84203133e-04   2.78661700e-04
+   1.86038799e-04   1.41262668e-04   8.07508541e-05   7.38895352e-05
+   5.85916171e-05   4.35992148e-05   3.94811763e-05   2.11615962e-05
+   1.64486933e-05   9.14533199e-06   3.34354358e-06   1.48934625e-06
+   7.36190393e-07]
+
+# ROV explained together by the 3 most principal components
+0.9918599363696365
+
+# Columns left now:
+161
+
