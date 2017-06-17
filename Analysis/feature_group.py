@@ -25,3 +25,18 @@ class FeatureGroup:
 			os.makedirs(logdir)
 		self.logdir = logdir
 		self.logname = logname
+
+	def set_featname_processor(self, dicts, delimiter, jointer):
+		assert type(dicts) == dict
+		assert type(delimiter) == str
+		assert type(jointer) == str
+		def process_featname(self):
+			cols = []
+			for col in list(self.df.columns):
+				for key, value in dicts.items():
+					if(key in col):
+						col = col.replace(key, value)
+				col = jointer.join(col.split(delimiter))
+				cols.append(col)
+			return cols
+		self.process_featname = process_featname
