@@ -16,6 +16,12 @@ class FeatureGroup:
 		if(logpath):
 			self.set_log(logpath)
 
+	def top_corrs(self, n=20):
+		au_corr = self.corr.abs().unstack()
+		to_drop = redundant_pairs(self.corr)
+		au_corr = au_corr.drop(labels=to_drop).sort_values(ascending=False)
+		return au_corr[:n]
+
 	def set_figdir(self, figdir):
 		assert figdir
 		if(not os.path.exists(figdir)):
@@ -32,8 +38,10 @@ class FeatureGroup:
 			logname = format("%s.txt" % self.name)
 		self.logdir = logdir
 		self.logname = logname
+		self.logpath = os.path.join(logdir, logname)
+		self.log = Logger(self.logpath).log # don't know whether correct
 
-	def set_featname_processor(self, dicts={}, delimiter="@@@", jointer="@@@"):
+	def set_featname_processor(self, dicts={}, delimiter="_", jointer="_"):
 		self.process_featname = featnameproc_Wrapper(self, dicts, delimiter, jointer)
 
 	def set_corr_plotter(self, labels=None, title=None):
@@ -71,3 +79,11 @@ def featnameproc_Wrapper(self, dicts, delimiter, jointer):
 			cols.append(col)
 		return cols
 	return process_featname
+
+def redundant_pairs(df):
+	pairs = set()
+	cols = df.columns
+	for i in range(df.shape[1]):
+		for j in range(i+1):
+			pairs.add((cols[i], cols[j]))
+	return pairs
