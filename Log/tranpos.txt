@@ -1,0 +1,43 @@
+# Top 30 correlated pairs
+public_transport_station_km  public_transport_station_min_walk    1.000000
+metro_min_walk               metro_km_walk                        1.000000
+railroad_station_walk_km     railroad_station_walk_min            1.000000
+bulvar_ring_km               kremlin_km                           0.998819
+sadovoe_km                   bulvar_ring_km                       0.998439
+                             kremlin_km                           0.997456
+ttk_km                       sadovoe_km                           0.992551
+                             bulvar_ring_km                       0.987045
+metro_km_avto                metro_min_walk                       0.986447
+                             metro_km_walk                        0.986447
+ttk_km                       kremlin_km                           0.984665
+bulvar_ring_km               zd_vokzaly_avto_km                   0.970838
+sadovoe_km                   zd_vokzaly_avto_km                   0.969778
+railroad_station_walk_min    railroad_station_avto_km             0.966131
+railroad_station_walk_km     railroad_station_avto_km             0.966131
+kremlin_km                   zd_vokzaly_avto_km                   0.965774
+ttk_km                       zd_vokzaly_avto_km                   0.959897
+metro_min_avto               metro_km_avto                        0.948242
+                             metro_min_walk                       0.937427
+                             metro_km_walk                        0.937427
+railroad_station_avto_km     railroad_station_avto_min            0.908084
+railroad_station_walk_km     railroad_km                          0.899914
+railroad_station_walk_min    railroad_km                          0.899914
+railroad_station_avto_km     railroad_km                          0.890994
+railroad_station_walk_km     railroad_station_avto_min            0.884318
+railroad_station_walk_min    railroad_station_avto_min            0.884318
+metro_km_avto                ttk_km                               0.813852
+metro_min_walk               ttk_km                               0.810520
+metro_km_walk                ttk_km                               0.810520
+metro_min_avto               ttk_km                               0.802182
+dtype: float64
+
+# ROV explained by the principal components of TransPos features
+[  1.00000000e+00   7.90776654e-12   6.90641839e-12   3.71680504e-12
+   3.02709407e-12   2.64748786e-12   6.66338663e-13   5.79201728e-13
+   2.58737289e-13   2.02087601e-13   1.50497356e-13   3.54905292e-14
+   2.85692584e-14   1.45069375e-14   1.38847987e-14   5.27230982e-15
+   4.21461907e-15   3.50766266e-15   2.37909305e-15   2.00940615e-15
+   1.20653479e-15   9.62099187e-16   5.16430386e-16   1.17872470e-16
+   8.75522234e-17   6.06283964e-17   5.42312094e-17   3.09423708e-17
+   9.98402083e-33   9.98402083e-33   9.98402083e-33]
+
