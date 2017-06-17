@@ -4,16 +4,18 @@ from Common import *
 
 class FeatureGroup:
 	def __init__(self, df, name, figdir=None, logpath=None):
-		assert df and name
+		assert type(df)  == pd.DataFrame
+		assert type(name) == str
 		self.df = df
 		self.name = name
 		self.corr = df.corr()
 		self.set_featname_processor()
+		self.set_corr_plotter()
 		if(figdir):
 			self.set_figdir(figdir)
-		if(logfile):
+		if(logpath):
 			self.set_log(logpath)
-			
+
 	def set_figdir(self, figdir):
 		assert figdir
 		if(not os.path.exists(figdir)):
@@ -32,33 +34,40 @@ class FeatureGroup:
 		self.logname = logname
 
 	def set_featname_processor(self, dicts={}, delimiter="@@@", jointer="@@@"):
-		assert type(dicts) == dict
-		assert type(delimiter) == str
-		assert type(jointer) == str
-		def process_featname(self):
-			cols = []
-			for col in list(self.df.columns):
-				for key, value in dicts.items():
-					if(key in col):
-						col = col.replace(key, value)
-				col = jointer.join(col.split(delimiter))
-				cols.append(col)
-			return cols
-		self.process_featname = process_featname
+		self.process_featname = featnameproc_Wrapper(self, dicts, delimiter, jointer)
 
-	def set_corr_plotter(self, labels, title=None):
-		def plot_corr(self, save=False):
-			ax = sns.heatmap(self.corr, square=True)
-		    if(labels):
-				ax.set_xticklabels(labels)
-				ax.set_yticklabels(labels)
-				plt.xticks(rotation=30)
-				plt.yticks(rotation=30)
-			if(not title):
-				title = self.name
-			plt.title(title)
-		    if(save):
-		    	figpath = os.path.join(self.figdir, format("%s.png" % self.name))
-		        plt.savefig(figpath)
-		    plt.show()
-		self.plot_corr = plot_corr
+	def set_corr_plotter(self, labels=None, title=None):
+		if(not title):
+			title = self.name
+		self.plot_corr = corrplot_Wrapper(self, title, labels)
+
+
+def corrplot_Wrapper(self, title, labels=None):
+	def plot_corr(self=self, save=False):
+		ax = sns.heatmap(self.corr, square=True)
+		if(labels):
+			ax.set_xticklabels(labels)
+			ax.set_yticklabels(labels)
+			plt.xticks(rotation=30)
+			plt.yticks(rotation=30)
+		plt.title(title)
+		if(save):
+			figpath = os.path.join(self.figdir, format("%s.png" % self.name))
+			plt.savefig(figpath)
+		plt.show()
+	return plot_corr
+
+def featnameproc_Wrapper(self, dicts, delimiter, jointer):
+	assert type(dicts) == dict
+	assert type(delimiter) == str
+	assert type(jointer) == str
+	def process_featname(self=self):
+		cols = []
+		for col in list(self.df.columns):
+			for key, value in dicts.items():
+				if(key in col):
+					col = col.replace(key, value)
+			col = jointer.join(col.split(delimiter))
+			cols.append(col)
+		return cols
+	return process_featname
