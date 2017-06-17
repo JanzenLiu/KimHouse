@@ -3,7 +3,7 @@ sys.path.append('../')
 from Common import *
  
 # TODO(Janzen): further reduce dimension for population features
-# TODO(Janzne): write a feature group handler class, for each instance, 
+# TODO(Janzen): write a feature group handler class, for each instance, 
 #	there's an unique directory for saving figures, and processing feature names
 # TODO(Janzen): fix the drop columns code: use another reference to keep combine unchanged
 # TODO(Janzen): develop an algorithm to find the best group of feature groups in between which
