@@ -200,8 +200,95 @@ pca.fit(x.fillna(x.mean()))
 trans.log(pca.explained_variance_ratio_, "ROV explained by the principal components of TransPos features")
 # The 1st principal components nearly explaine all...
 # so move on to other feature groups now.
-
 # 128 raw features left, with 1 + 5 + 3 +1 + 1 + 1 = 12 principal components for others
-
 # magic numbers: 74
 
+
+df = combine.drop(hr.trp_feats, 1) # version 4
+fg = FeatureGroup(df,
+	name="v4",
+	figdir="../Figure/Raw/Corr")
+fg.plot_corr(save=True)
+fg.top_corrs(50)
+# subcorr = fg.corr.iloc[50:90,50:90]
+# sns.heatmap(subcorr, square=True);plt.show()
+# subcorr = fg.corr.iloc[45:75,45:75]
+# sns.heatmap(subcorr, square=True);plt.show()
+# subcorr = fg.corr.iloc[45:74,45:74]
+# sns.heatmap(subcorr, square=True);plt.show()
+subcorr = fg.corr.iloc[50:74,50:74]
+sns.heatmap(subcorr, square=True);plt.show()
+subcorr = fg.corr.iloc[57:74,57:74]
+sns.heatmap(subcorr, square=True);plt.show()
+subcorr = fg.corr.iloc[50:74,50:74]
+subcols = subcorr.columns
+subdf = df[subcols]
+pca.fit(subdf)
+print(pcs.explained_variance_ratio_)
+subcols=fg.corr.columns[50:74]
+subdf=df[subcols]
+pca.fit(subdf)
+print(pca.explained_variance_ratio_)
+subcols=fg.corr.columns[57:74]
+pca.fit(subdf)
+subdf=df[subcols]
+pca.fit(subdf)
+print(pca.explained_variance_ratio_[:5].sum())
+subcols=fg.corr.columns[50:56]
+subdf=df[subcols]
+pca.fit(subdf)
+print(pca.explained_variance_ratio_)
+indcols = hr.ind_feats
+indcols.remove('culture_objects_top_25')
+indcols.remove('culture_objects_top_25')
+indcols.remove('culture_objects_top_25_raion')
+inds = combine[indcols]
+sns.heatmap(inds.corr(), square=True);plt.show()
+pca.fit(inds)
+edus = hr.edu_feats
+edus = combine[edus]
+sns.heatmap(edus.corr(), square=True); plt.show()
+educols1=edus.columns[:6]
+educols2=edus.columns[-5:]
+edus1 = edus[educols1]
+edus2 = edus[educols2]
+sns.heatmap(edus1.corr(), square=True); plt.show()
+sns.heatmap(edus2.corr(), square=True); plt.show()
+print(edus1.isnull().sum())
+edus1v1 = edus.fillna(edus.mean())
+pca.fit(edus1)
+print(pca.explained_variance_ratio_)
+pca.fit(edus1v1)
+print(pca.explained_variance_ratio_)
+print(pca.explained_variance_ratio_[:2].sum())
+pca.fit(edus2)
+print(pca.explained_variance_ratio_)
+print(pca.explained_variance_ratio_[:2].sum)
+buss = df[hr.bus_feats]
+sns.heatmap(buss.corr(), square=True);plt.show()
+sns.heatmap(inds.corr(), square=True);plt.show()
+spts = df[hr.spt_feats]
+sns.heatmap(spts.corr(), square=True);plt.show()
+spts.shape
+sns.heatmap(spts.corr(), square=True);plt.show()
+spts1 = spts.iloc[:,1:6]
+spts2 = spts.drop(spts.columns[1:6],1)
+sns.heatmap(spts1.corr(), square=True);plt.show()
+sns.heatmap(np.log(spts1).corr(), square=True);plt.show()
+sns.heatmap(spts2.corr(), square=True);plt.show()
+pca.fit(spts1)
+print(pca.explained_variance_ratio_)
+print(pca.fit(spts2);pca.explained_variance_ratio_)
+# for spts2, it's acceptable to transform those 7 features to 1
+culcols = hr.cul_feats
+culs = df[culcols]
+sns.heatmap(culs.corr(), square=True);plt.show()
+envcols = hr.env_feats
+envs = df[envcols]
+sns.heatmap(envs.corr(), square=True);plt.show()
+nbrcols = hr.nbr_feats
+nbrs = df[nbrcols]
+sns.heatmap(nbrs.corr(), square=True);plt.show()
+bldcols = hr.bld_feats
+blds = df[bldcols]
+sns.heatmap(blds.corr(), square=True);plt.show()
