@@ -1,6 +1,7 @@
 import sys
 sys.path.append('../')
 from Common import *
+from feature_group import FeatureGroup
  
 # TODO(Janzen): further reduce dimension for population features
 # TODO(Janzen): write a feature group handler class, for each instance, 
@@ -140,4 +141,67 @@ plot_corr(combine, save="../Figure/Raw/Corr/3_no_religion_no_office.png")
 hl.log(combine.shape[1], "Columns left now:") # 161
 # We can now just use 161 + (1 + 5 + 3 +1 + 1) = 172 features to represent house information now,
 # whose original number of features is 290!
+
+df = combine.drop(hr.caf_feats, 1) # version 1
+df = df.drop(hr.pop_feats, 1) # version 2
+df = df.drop(hr.ofc_feats, 1)
+df = df.drop(hr.rel_feats, 1) # version 3
+
+combine['railroad_terminal_raion'] = combine['railroad_terminal_raion'].map({"yes":1, "no":0})
+combine['big_road1_1line'] = combine['big_road1_1line'].map({"yes":1, "no":0})
+combine['railroad_1line'] = combine['railroad_1line'].map({"yes":1, "no":0})
+trans = FeatureGroup(combine[hr.trp_feats], 
+	name="TranPos",
+	figdir="../Figure/Raw/Transportation",
+	logpath="../Log/tranpos.txt")
+trans.plot_corr(save=True)
+trans.log(trans.top_corrs(30), "Top 30 correlated pairs")
+
+# 'sub_area', 'area_m', 'railroad_terminal_raion', 'ID_metro',
+#        'metro_min_avto', 'metro_km_avto', 'metro_min_walk', 'metro_km_walk',
+#        'railroad_station_walk_km', 'railroad_station_walk_min',
+#        'ID_railroad_station_walk', 'railroad_station_avto_km',
+#        'railroad_station_avto_min', 'ID_railroad_station_avto',
+#        'public_transport_station_km', 'public_transport_station_min_walk',
+#        'mkad_km', 'ttk_km', 'sadovoe_km', 'bulvar_ring_km', 'kremlin_km',
+#        'big_road1_km', 'ID_big_road1', 'big_road1_1line', 'big_road2_km',
+#        'ID_big_road2', 'railroad_km', 'railroad_1line', 'zd_vokzaly_avto_km',
+#        'ID_railroad_terminal', 'bus_terminal_avto_km', 'ID_bus_terminal'
+
+railroads = []
+for col in list(trans.df.columns):
+	if 'railroad' in col:
+		railroads.append(col)
+railroads = FeatureGroup(trans.df[railroads],
+	name="Railroad",
+	figdir="../Figure/Raw/Transportation",
+	logpath="../Log/tranpos.txt")
+railroads.set_featname_processor(
+	dicts={"railroad_":""})
+labels = railroads.process_featname()
+# railroads.set_corr_plotter(labels, "Correlation between Railroad Features")
+railroads.plot_corr(save=True)
+
+railroads2 = []
+for col in list(railroads.df.columns):
+	if(not "ID" in col):
+		if(not "raion" in col):
+			if(not "station_walk_km" in col):
+				if(not "1line" in col):
+					railroads2.append(col)
+railroads2 = FeatureGroup(trans.df[railroads2], "Subrailroad")
+railroads2.plot_corr()
+pca = PCA()
+pca.fit(railroads2.df.fillna(railroads2.df.mean()))
+print(pca.explained_variance_ratio_)
+
+x = trans.df[trans.corr.index]
+pca.fit(x.fillna(x.mean()))
+trans.log(pca.explained_variance_ratio_, "ROV explained by the principal components of TransPos features")
+# The 1st principal components nearly explaine all...
+# so move on to other feature groups now.
+
+# 128 raw features left, with 1 + 5 + 3 +1 + 1 + 1 = 12 principal components for others
+
+# magic numbers: 74
 
