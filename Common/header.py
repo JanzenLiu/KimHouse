@@ -9,6 +9,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy import stats
 from sklearn.decomposition import PCA
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge
 
 import os
 # mpl.rcParams['figure.figsize'] = (12, 8)
