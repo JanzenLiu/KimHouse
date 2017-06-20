@@ -10,6 +10,29 @@ hr = HouseReader()
 
 caf_feats = train[hr.caf_feats].nunique().sort_values(ascending=True)
 
+def preprocess(df):
+	# v2 preprocess (together with v1)
+	# Score of Linear Regression is: 0.498153
+	# Score of Ridge is 0.498137
+	# Score (Kaggle): 0.39167
+	# replace the 48 cafe counts features with the log of the shift of their most principal component
+	pca = PCA()
+	caf_feats1 = caf_feats.index.copy()
+	for feat in caf_feats.index:
+		if not 'count' in feat:
+			caf_feats1 = caf_feats1.drop(feat)
+	pca.fit(combine[caf_feats1])
+	pc1 = pca.transform(df[caf_feats1])[:,0]
+	# log_pc1 = np.log1p(pc1 - pc1.min()) # -328.92996303028502
+	log_pc1 = np.log1p(pc1 + 400)
+	df['log_caf_pc1'] = log_pc1
+	df['caf_intense1'] = df['cafe_count_500_price_high'].map(lambda x: 1 if x > 1 else 0)
+	# df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 2 if x > 5 else 1 if x > 1 else 0)
+	df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 1 if x > 1 else 0)
+
+	return df
+
+
 def plot_kde():
 	for feat in caf_feats.index:
 		if not 'count' in feat:
