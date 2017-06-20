@@ -6,6 +6,8 @@ def preprocess(df):
 	# v1 preprocessor
 	# Score of Linear Regression is: 0.521055
 	# Score of Ridge is 0.521040
+	# Score (Kaggle): 0.41746
+	# map categorical building feature to numeric, and transform square meter features to their log1p
 	hr = HouseReader()
 	df['product_type'] = df['product_type'].map({'OwnerOccupier':0, 'Investment':1})
 	df['full_sq'] = np.log1p(df['full_sq'])
