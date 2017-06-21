@@ -11,11 +11,18 @@ hr = HouseReader()
 caf_feats = train[hr.caf_feats].nunique().sort_values(ascending=True)
 
 def preprocess(df):
-	# v2 preprocess (together with v1)
+	# v2 preprocessor (together with v1)
 	# Score of Linear Regression is: 0.498153
 	# Score of Ridge is 0.498137
 	# Score (Kaggle): 0.39167
 	# replace the 48 cafe counts features with the log of the shift of their most principal component
+
+	# v6 preprocessor (together with v5)
+	# Score of Linear Regression is: 0.492393
+	# Score of Ridge is 0.492457
+	# Score (Kaggle): 0.38162
+	# transform catering_km to its natural log
+
 	pca = PCA()
 	caf_feats1 = caf_feats.index.copy()
 	for feat in caf_feats.index:
@@ -29,6 +36,7 @@ def preprocess(df):
 	df['caf_intense1'] = df['cafe_count_500_price_high'].map(lambda x: 1 if x > 1 else 0)
 	# df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 2 if x > 5 else 1 if x > 1 else 0)
 	df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 1 if x > 1 else 0)
+	df['log_catering_km'] = np.log(df['catering_km'])
 
 	return df
 

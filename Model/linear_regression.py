@@ -25,4 +25,4 @@ pred_lr = np.exp(lr_model.predict(X_test))
 pred_ridge = np.exp(ridge_model.predict(X_test))
 
 res = pd.DataFrame({'id':test['id'], 'price_doc':pred_ridge})
-res.to_csv('../baseline_v3.csv', index=False)
+res.to_csv('../baseline_v6.csv', index=False)
