@@ -23,6 +23,11 @@ def preprocess(df):
 	# Score (Kaggle): 0.38162
 	# transform catering_km to its natural log
 
+	# v7 preprocessor (together with v6):
+	# Score of Linear Regression is: 0.492081
+	# Score of Ridge is 0.492115
+	# replace cafe_avg_price_3000 by its natural logarithm
+
 	pca = PCA()
 	caf_feats1 = caf_feats.index.copy()
 	for feat in caf_feats.index:
@@ -37,7 +42,7 @@ def preprocess(df):
 	# df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 2 if x > 5 else 1 if x > 1 else 0)
 	df['caf_intense2'] = df['cafe_count_1000_price_high'].map(lambda x: 1 if x > 1 else 0)
 	df['log_catering_km'] = np.log(df['catering_km'])
-
+	df['log_cafe_avg_price_3000'] = np.log(df['cafe_avg_price_3000'].fillna(df['cafe_avg_price_3000'].median()))
 	return df
 
 
