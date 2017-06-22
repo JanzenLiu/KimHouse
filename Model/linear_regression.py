@@ -3,7 +3,7 @@ sys.path.append('../')
 from Common import *
 from Preprocess import X_train, X_test, y_train
 
-# print(X_train.shape[1])
+print(X_train.shape[1], "features used")
 train_size_ratio = 0.7
 train_size = int(train.shape[0] * train_size_ratio)
 
@@ -25,4 +25,4 @@ pred_lr = np.exp(lr_model.predict(X_test))
 pred_ridge = np.exp(ridge_model.predict(X_test))
 
 res = pd.DataFrame({'id':test['id'], 'price_doc':pred_ridge})
-# res.to_csv('../baseline_v6.csv', index=False)
+res.to_csv('../baseline_v8.csv', index=False)

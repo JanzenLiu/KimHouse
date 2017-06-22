@@ -4,6 +4,7 @@ from Common import *
 
 def preprocess(df):
 	# v1 preprocessor
+	# 10 features used
 	# Score of Linear Regression is: 0.521055
 	# Score of Ridge is 0.521040
 	# Score (Kaggle): 0.41746
