@@ -6,7 +6,7 @@ from Common import *
 # 47 features used
 # Score of Linear Regression is: 0.470858
 # Score of Ridge is 0.471230
-# Score (Kaggle): 0.35922
+# Score (Kaggle): 0.35922 -> 0.34925 (after using the whole data set to train)
 # map many_top_20_school, many_top_20_university to binary using 1 and 2 as discrimating thresholds
 # transform university_km and school_km to their natural logarithm
 
