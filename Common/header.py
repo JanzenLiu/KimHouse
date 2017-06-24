@@ -12,6 +12,8 @@ from sklearn.decomposition import PCA
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Ridge
 from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.neural_network import MLPRegressor
+from sklearn.preprocessing import Normalizer
 from itertools import cycle
 
 import os
