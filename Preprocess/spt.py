@@ -2,6 +2,12 @@ import sys
 sys.path.append('../')
 from Common import *
 
+# v15 preprocessor
+# 56 features used
+# Score of Linear Regression is: 0.468455
+# Score of Ridge is 0.468871
+
+
 spt_feats = hr.spt_feats
 
 def classify_feats():
