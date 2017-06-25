@@ -34,6 +34,7 @@ def classify_feats():
 km, part, count = classify_feats()
 
 def add_feats(df):
+	# print(ind_feats)
 	# df['log_nuclear_reactor_km'] = np.log1p(df['nuclear_reactor_km'])
 	df['log_radiation_km'] = np.log1p(df['radiation_km'])
 	df['log_power_transmission_line_km'] = np.log1p(df['power_transmission_line_km'])
@@ -41,12 +42,12 @@ def add_feats(df):
 	# df['log_ts_km'] = np.log1p(df['ts_km'])
 	df['log_workplaces_km'] = np.log1p(df['workplaces_km'])
 	df['incineration'] = df['incineration_raion'].map(lambda x: 1 if 'yes' else 0)
+	df['new_culture_top_25'] = df['culture_objects_top_25'].map(lambda x: 1 if 'yes' else 0)
+	df['new_culture_top_25_raion'] = df['culture_objects_top_25_raion'].map(lambda x: x if x < 3 else 0)
 	return df
 
 def trim_feats(df):
 	# print(ind_feats)
-	df['new_culture_top_25'] = df['culture_objects_top_25'].map(lambda x: 1 if 'yes' else 0)
-	df['new_culture_top_25_raion'] = df['culture_objects_top_25_raion'].map(lambda x: x if x < 3 else 0)
 	df = df.drop(ind_feats, 1)
 	return df
 
