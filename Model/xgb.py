@@ -12,8 +12,8 @@ d_val = xgb.DMatrix(X_train[train_size:].values)
 d_test = xgb.DMatrix(X_test.values)
 D_train = xgb.DMatrix(X_train.values, y_train.values)
 
-params = {'max_depth':5, 'eta':0.05, 'silent':1, 'task':'reg:linear', 'eval_metric':'rmse'}
-num_round = 300
+params = {'max_depth':5, 'eta':0.03, 'silent':1, 'task':'reg:linear', 'eval_metric':'rmse'}
+num_round = 500
 
 bst = xgb.train(params, d_train, num_round)
 xgb_pred_val = bst.predict(d_val)
