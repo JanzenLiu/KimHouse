@@ -6,7 +6,8 @@ from Common import *
 # 66 features used
 # Score of Linear Regression is: 0.467625
 # Score of Ridge is 0.467963
-# Score of XGBoost (Linear Regression) is: 0.428583
+# Score of XGBoost (Linear Regression) is: 0.427861
+# Score (Kaggle): 0.32923
 
 nbr_feats = hr.nbr_feats
 
