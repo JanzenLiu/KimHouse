@@ -3,10 +3,9 @@ sys.path.append('../')
 from Common import *
 from Preprocess import X_train, X_test, y_train
 
-# TODO(Janzen): add XGBoost model
-# TODO(Janzen): add the validation set to model training before predicting test data
 # TODO(Janzen): write a K-neighbor intepolation class
 # TODO(Janzen): apply K-neighbor to the predicted values by lr, or directly to the data
+# TODO(Janzen): add a classifier before regression. for houses with less equal than 3000000 price, use different regressor to train
 
 print(X_train.shape[1], "features used")
 train_size_ratio = 0.7
