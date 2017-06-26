@@ -49,3 +49,7 @@ X_test = ofc.trim_feats(X_test)
 X_test = X_test.drop(caf.caf_feats.index, 1)
 X_test = X_test.drop(pop.pop_feats, 1)
 y_train = np.log(train['price_doc'])
+y_train_raw = train['price_doc']
+
+for df in [train, test]:
+	df['build_year'] = df['build_year'].map(lambda x: 2018 - x if x < 1000 else x if x < 3000 else 2005)

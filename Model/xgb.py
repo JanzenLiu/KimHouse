@@ -36,4 +36,4 @@ pred_xgb = np.exp(bst.predict(d_test))
 
 res = pd.DataFrame({'id':test['id'], 'price_doc':pred_xgb})
 res['price_doc'] = res['price_doc'].map(price_map)
-res.to_csv('../Predictions/baseline_v19.xgb.2.csv', index=False)
+res.to_csv('../Predictions/baseline_v19.xgb.3.csv', index=False)

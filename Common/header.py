@@ -14,6 +14,8 @@ from sklearn.linear_model import Ridge
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.neural_network import MLPRegressor
 from sklearn.preprocessing import Normalizer
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 warnings.filterwarnings("ignore")
 import xgboost as xgb
 from itertools import cycle

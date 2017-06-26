@@ -14,5 +14,6 @@ def preprocess(df):
 	df['full_sq'] = np.log1p(df['full_sq'])
 	df['life_sq'] = np.log1p(df['life_sq'])
 	df['kitch_sq'] = np.log1p(df['kitch_sq'])
+	df['build_year'] = df['build_year'].map(lambda x: 2018 - x if x < 1000 else x if x < 3000 else 2005)
 	df[hr.bld_feats] = df[hr.bld_feats].fillna(df[hr.bld_feats].median())
 	return df
